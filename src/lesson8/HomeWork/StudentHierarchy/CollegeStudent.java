@@ -1,0 +1,22 @@
+package lesson8.HomeWork.StudentHierarchy;
+
+public class CollegeStudent extends Student {
+
+	String collegeName;
+	int rating;
+	long id;
+
+	public CollegeStudent(String firstName, String lastName, int group, Course[] coursesTaken) {
+		super(firstName, lastName, group, coursesTaken);
+		// TODO Auto-generated constructor stub
+	}
+
+	public CollegeStudent(String firstName, String lastName, int group, Course[] coursesTaken, String collegeName,
+			int rating, long id) {
+		super(firstName, lastName, group, coursesTaken);
+		this.collegeName = collegeName;
+		this.rating = rating;
+		this.id = id;
+	}
+
+}

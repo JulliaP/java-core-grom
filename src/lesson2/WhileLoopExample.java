@@ -1,0 +1,16 @@
+package lesson2;
+
+public class WhileLoopExample {
+
+	public static void main(String args[]) {
+		int x = 1;
+		while (x <= 10) {
+
+			System.out.print(x);
+			x++;
+			System.out.print("\n");
+		}
+		
+	}
+
+}
