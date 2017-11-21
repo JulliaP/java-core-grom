@@ -1,4 +1,4 @@
-package lesson20.task1.exception;
+package lesson20;
 
 public class InternalServerException extends Exception {
 
