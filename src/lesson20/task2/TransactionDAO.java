@@ -127,7 +127,8 @@ public class TransactionDAO {
 
         if (!validCity) {
 
-            throw new BadRequestException("We don't work with City :  " + transaction.getCity() + ". Cant' be save");
+            throw new BadRequestException("We don't work with City :  " + transaction.getCity() +
+                    " Transaction with id " + transaction.getId() + " cant' be save");
         }
         // TO DO - Gorod oplaty ne razreshen -DZ (BadRequestException), ne xvatilo mesta -DZ (vybrasyvaem oshibku
         // InternalServerException)
