@@ -98,6 +98,7 @@ public class TransactionDAO {
 
         for (Transaction tr : getTransactionPerDay(transaction.getDateCreated())) {
             sum += tr.getAmount();
+            count++;
         }
 
         if (sum > utils.getLimitTransactionsPerDayAmount()) {
