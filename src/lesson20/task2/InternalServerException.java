@@ -1,6 +1,11 @@
 package lesson20.task2;
 
 public class InternalServerException extends Exception {
-public InternalServerException(String message) {
+
+    public InternalServerException(String message) {
         super(message);
-}
+        // TODO Auto-generated constructor stub
+    }
+
+    
+    }
