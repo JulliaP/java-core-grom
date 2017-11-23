@@ -29,10 +29,17 @@ public class TransactionDAO {
         // ne xvatilo mesta -DZ (vybrasyvaem oshibku InternalServerException)
 
         validate(transaction);
-        // findEmptySlot(transaction);
-        transactions[findEmptySlot(transaction)] = transaction;
-        // System.out.println(Arrays.toString(transactions));
-        return transactions[findEmptySlot(transaction)]; // ideal'no vozvrashat'tu tx, kot tol'ko chto soxranili
+        int index = 0;
+        for (Transaction tr : transactions) {
+            if (tr == null) {
+                transactions[index] = transaction;
+                return transaction;
+            }
+            index++;
+        }
+
+        throw new InternalServerException("No empty slot for txID " + transaction.getId() + " .Can't be saved ");
+
     }
 
     public Transaction[] transactionList() {
@@ -126,24 +133,6 @@ public class TransactionDAO {
         // InternalServerException)
 
         // 5th validation - no empty slot
-    }
-
-    private int findEmptySlot(Transaction transaction) throws Exception {
-        int freeSlotIndex = -1;
-
-        for (int i = 0; i < transactions.length; i++) {
-            if (transactions[i] == null) {
-                freeSlotIndex = i;
-                break;
-            }
-        }
-
-        if (freeSlotIndex == -1) {
-
-            throw new InternalServerException("No empty slot for txID " + transaction.getId() + " .Can't be saved ");
-        }
-
-        return freeSlotIndex;
     }
 
     private Transaction[] getTransactionPerDay(Date dateOfCurTransaction) {
