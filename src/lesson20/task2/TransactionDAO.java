@@ -101,11 +101,11 @@ public class TransactionDAO {
             count++;
         }
 
-        if (sum > utils.getLimitTransactionsPerDayAmount()) {
+        if (sum + transaction.getAmount() > utils.getLimitTransactionsPerDayAmount()) {
             throw new LimitExceeded("Transaction limit per day amount exceeded " + transaction.getId() + ".Can't be saved");
         }
         // tretja validacija LimitTransactionsPerDayCount
-        if (count > utils.getLimitTransactionsPerDayCount()) {
+        if (count + 1 > utils.getLimitTransactionsPerDayCount()) {
             throw new LimitExceeded("Transaction limit per day count exceeded " + transaction.getId() + ".Can't be saved");
         }
         // chetvertaja validacija Gorod
