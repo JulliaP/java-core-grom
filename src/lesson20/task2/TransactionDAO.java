@@ -4,9 +4,6 @@ import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
 
-import lesson20.BadRequestException;
-import lesson20.InternalServerException;
-
 public class TransactionDAO {
     // DAO - eto tozhe chto i repositorij, v DAO proisxodit rabota s dannymi
     private Transaction[] transactions = new Transaction[10];
