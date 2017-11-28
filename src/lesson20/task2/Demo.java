@@ -9,7 +9,7 @@ public class Demo {
 
         Controller controller = new Controller();
         TransactionDAO transactionDAO = new TransactionDAO();
-        Transaction transaction1 = new Transaction(12345, "Kiev", 20, "description", TransactionType.INCOME, new Date());
+        Transaction transaction1 = new Transaction(12345, "Kharkov", 20, "description", TransactionType.INCOME, new Date());
         Transaction transaction2 = new Transaction(12777, "Odessa", 1, "description", TransactionType.INCOME, new Date());
         Transaction transaction3 = new Transaction(12778, "Odessa", 1, "description", TransactionType.INCOME, new Date());
         Transaction transaction4 = new Transaction(12779, "Odessa", 2, "description", TransactionType.INCOME, new Date());
@@ -23,19 +23,19 @@ public class Demo {
         // long id, String city, int amount, String description, TransactionType type, Date dateCreated
 
         controller.save(transaction1);
-        controller.save(transaction2);
-        controller.save(transaction3);
-        controller.save(transaction4);
-        controller.save(transaction5);
-        controller.save(transaction6);
-        controller.save(transaction7);
-        controller.save(transaction8);
+        // controller.save(transaction2);
+        // controller.save(transaction3);
+        // controller.save(transaction4);
+        // controller.save(transaction5);
+        // controller.save(transaction6);
+        // controller.save(transaction7);
+        // controller.save(transaction8);
         // controller.save(transaction9);
         // controller.save(transaction10);
         // controller.save(transaction11);
-        controller.transactionList("Odessa");
-        controller.transactionList("Odessa");
-        controller.transactionList();
+        // controller.transactionList("Odessa");
+        // controller.transactionList("Odessa");
+        // controller.transactionList();
     }
 
 }

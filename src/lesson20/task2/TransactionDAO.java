@@ -4,9 +4,6 @@ import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
 
-import lesson20.BadRequestException;
-import lesson20.InternalServerException;
-
 public class TransactionDAO {
     // DAO - eto tozhe chto i repositorij, v DAO proisxodit rabota s dannymi
     private Transaction[] transactions = new Transaction[10];
@@ -32,10 +29,17 @@ public class TransactionDAO {
         // ne xvatilo mesta -DZ (vybrasyvaem oshibku InternalServerException)
 
         validate(transaction);
-        // findEmptySlot(transaction);
-        transactions[findEmptySlot(transaction)] = transaction;
-        // System.out.println(Arrays.toString(transactions));
-        return transactions[findEmptySlot(transaction)]; // ideal'no vozvrashat'tu tx, kot tol'ko chto soxranili
+        int index = 0;
+        for (Transaction tr : transactions) {
+            if (tr == null) {
+                transactions[index] = transaction;
+                return transaction;
+            }
+            index++;
+        }
+
+        throw new InternalServerException("No empty slot for txID " + transaction.getId() + " .Can't be saved ");
+
     }
 
     public Transaction[] transactionList() {
@@ -101,13 +105,14 @@ public class TransactionDAO {
 
         for (Transaction tr : getTransactionPerDay(transaction.getDateCreated())) {
             sum += tr.getAmount();
+            count++;
         }
 
-        if (sum > utils.getLimitTransactionsPerDayAmount()) {
+        if (sum + transaction.getAmount() > utils.getLimitTransactionsPerDayAmount()) {
             throw new LimitExceeded("Transaction limit per day amount exceeded " + transaction.getId() + ".Can't be saved");
         }
         // tretja validacija LimitTransactionsPerDayCount
-        if (count > utils.getLimitTransactionsPerDayCount()) {
+        if (count + 1 > utils.getLimitTransactionsPerDayCount()) {
             throw new LimitExceeded("Transaction limit per day count exceeded " + transaction.getId() + ".Can't be saved");
         }
         // chetvertaja validacija Gorod
@@ -122,30 +127,13 @@ public class TransactionDAO {
 
         if (!validCity) {
 
-            throw new BadRequestException("We don't work with City :  " + transaction.getCity() + ". Cant' be save");
+            throw new BadRequestException("We don't work with City :  " + transaction.getCity() +
+                    " Transaction with id " + transaction.getId() + " cant' be save");
         }
         // TO DO - Gorod oplaty ne razreshen -DZ (BadRequestException), ne xvatilo mesta -DZ (vybrasyvaem oshibku
         // InternalServerException)
 
         // 5th validation - no empty slot
-    }
-
-    private int findEmptySlot(Transaction transaction) throws Exception {
-        int freeSlotIndex = -1;
-
-        for (int i = 0; i < transactions.length; i++) {
-            if (transactions[i] == null) {
-                freeSlotIndex = i;
-                break;
-            }
-        }
-
-        if (freeSlotIndex == -1) {
-
-            throw new InternalServerException("No empty slot for txID " + transaction.getId() + " .Can't be saved ");
-        }
-
-        return freeSlotIndex;
     }
 
     private Transaction[] getTransactionPerDay(Date dateOfCurTransaction) {
