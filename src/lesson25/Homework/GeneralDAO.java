@@ -3,7 +3,7 @@ package lesson25.Homework;
 public class GeneralDAO<T extends Document> {
 
     @SuppressWarnings("unchecked")
-    private T[] array = (T[]) new Object[10];
+    private T[] array = (T[]) new Document[10];
 
     public T save(T t) throws Exception {
         validate(t);
@@ -15,7 +15,7 @@ public class GeneralDAO<T extends Document> {
 
             }
             index++;
-            System.out.println(array);
+
         }
 
         throw new Exception("No empty slot for Object " + t.getId() + " .Can't be saved ");

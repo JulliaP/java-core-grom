@@ -12,9 +12,15 @@ public class Demo {
         dao1.save(invoice1);
         System.out.println(Arrays.deepToString(dao1.getAll()));
 
-        Invoice invoice2 = new Invoice(133, "ju23");
+        Invoice invoice2 = new Invoice(-133, "ju23");
         dao1.save(invoice2);
         System.out.println(Arrays.deepToString(dao1.getAll()));
+
+        GeneralDAO<Order> dao2 = new GeneralDAO<>();
+
+        Order order = new Order(587, "Julia");
+        dao2.save(order);
+        System.out.println(Arrays.deepToString(dao2.getAll()));
     }
 
 }
