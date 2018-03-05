@@ -4,6 +4,7 @@ import java.time.ZonedDateTime;
 import java.util.Date;
 
 //my hotim chtoby vse kapabilities sortirovalis' på id
+//Comparable - sravnivaemyj (tot kotoryj budut sravnivat', sortirovat')
 
 public class Capability implements Comparable<Capability> {
     private long id;

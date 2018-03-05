@@ -2,8 +2,8 @@ package lesson28;
 
 import java.time.ZonedDateTime;
 import java.util.ArrayList;
-//import java.util.Comparator;
-//import java.util.Date;
+import java.util.Comparator;
+import java.util.Date;
 
 public class DemoComparator {
 
@@ -13,17 +13,21 @@ public class DemoComparator {
         ZonedDateTime date3 = ZonedDateTime.now().minusDays(2);
         ZonedDateTime date4 = ZonedDateTime.now().minusDays(3);
 
-        Capability capability1 = new Capability(1200, "Julia", "a", false, date1);
-        Capability capability2 = new Capability(1005, "Fadi", "b", false, date2);
-        Capability capability3 = new Capability(900, "Fadi", "c", true, date3);
-        Capability capability4 = new Capability(1001, "Fadi", "c", true, date4);
+        Capability capability1 = new Capability(1200, "Julia", "a", false, null);
+        Capability capability2 = new Capability(1005, "Julia", "a", false, null);
+        Capability capability3 = new Capability(900, "Anna", null, true, date3);
+        Capability capability4 = new Capability(1001, "Julia", "b", true, date4);
+        Capability capability5 = new Capability(1004, "Julia", null, true, date3);
+        Capability capability6 = new Capability(1006, "Julia", null, true, date4);
 
         ArrayList<Capability> capabilities = new ArrayList<>();
 
         capabilities.add(capability1);
         capabilities.add(capability2);
-        capabilities.add(capability3);
-        capabilities.add(capability4);
+        // capabilities.add(capability3);
+        // capabilities.add(capability4);
+        // capabilities.add(capability5);
+        // capabilities.add(capability6);
 
         System.out.println(capabilities);
 

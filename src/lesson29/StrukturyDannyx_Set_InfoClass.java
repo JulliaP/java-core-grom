@@ -16,5 +16,9 @@ public class StrukturyDannyx_Set_InfoClass {
     // V liste sortirovka est', no tam nuzhno vyzvat' metod + napisat' Comparator.
 
     // LinkedHashSet. V otlichie ot HashSet, LinkedHashSet garantiruet porjadok sledovanija elementov.
-    // Eto porjadok dobavlenija elementov.
+    // Eto porjadok dobavlenija elementov. V LinkedHashSet tak zhe kak i v LinkedList ocherednost' strogo zakreplena,
+    // sherenga.
+    // Elementy strogo svjazany mezhdu soboj, poetomu garantiruetsja porjadok.
+    // Struktura LinkedHasSet'a takaja zhe kak i u LinkedList - sherenga.
+    // Na praktike HashSet ispol'zuetsja chashe chem LinkedHashSet.
 }

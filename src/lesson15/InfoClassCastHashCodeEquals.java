@@ -2,8 +2,8 @@ package lesson15;
 
 public class InfoClassCastHashCodeEquals {
 
-    // chto takoe hashCode? Eto chislo, kotoroe formiruetsja på algoritmu vnutri JVM na osnovanii jachejki pamjati, v
-    // kotoroj nahoditsja ob'ect.
+    // chto takoe hashCode? Eto chislo, kotoroe formiruetsja på algoritmu vnutri JVM na osnovanii jachejki pamjati,
+    // v kotoroj nahoditsja ob'ect.
     // Zachem on nuzhen i gde on ispolzuetsja ? Ispolzuetsja v strukturah dannyx, kot rabotajut s etim hashCode
     // -hashmap, hashtable i t.d. Pochemu hashCode i equals idut vmeste
     // i pochemu nel'zja skazat' chto dostatochno odnogo equals?

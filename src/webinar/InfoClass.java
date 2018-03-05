@@ -15,7 +15,7 @@ public class InfoClass {
     // otkryvaetsja.
     // Vot etot pervyj shag obshenija mezhdu zaprosom na server i otkrytiem stranichki proishodit cherez kontroller.
     // Vse zaprosy, kotorye usery vvodjat na stranice oni popadajut na kontroller. Eto obsheprinjataja arhitektura
-    // prilozhenij, primenimaja dlja ljubyx jazykov. Seli user nazhimaet knopku Book na web-stranice, zaproc prihodit na
+    // prilozhenij, primenimaja dlja ljubyx jazykov. Esli user nazhimaet knopku Book na web-stranice, zaproc prihodit na
     // Controller.
     // Po etomu principu postroenny vse web-sajty.
     // Vverxu kontroller

@@ -1,6 +1,6 @@
 package lesson25;
 
-public class GeneralDAO<T> {
+public class GeneralDAO {
 
     private void print(Order order) {
         System.out.println("order is" + order.toString());

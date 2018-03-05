@@ -13,8 +13,8 @@ public class ComparatorComparableInfoClass {
     // Comparator - eto kastomnyj tip sortirovki, kotoryx mozhet byt' neskol'ko.
 
     // Osobennost' Comparable vshivaetsja prjamo v klass(smotri klass Capability, method compareTo)
-    // Poetmu Comparable mozhet zadan byt' tol odin raz
+    // Poetmu Comparable mozhet zadan byt' tolko odin raz.
 
-    // Comparator - eto celyj otdel'nyj klass. Ix mozhet byt' mnogo.Eto ix glavnoe otlichie
+    // Comparator - eto celyj otdel'nyj klass. Ix mozhet byt' mnogo.Eto ix glavnoe otlichie.
 
 }

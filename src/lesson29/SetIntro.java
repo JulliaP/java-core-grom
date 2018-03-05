@@ -11,8 +11,8 @@ public class SetIntro {
         // budem v HashSet dobavljat' elementy
         // esli posmotret' na resultat ispolnenija - elementy razmeshajutsja v strannom porjadke
         // Po povodu porjadka i sortirovki HashSet nichego ne garantiruet,
-        // bolle togo s techeniem vremeni porjadok mozhet menjatsja
-        // Ego osnovnaja osobennost'(i preimushestvo) - on ne propuskaet dupplicatov
+        // bolee togo s techeniem vremeni porjadok mozhet menjatsja
+        // Ego osnovnaja osobennost'(i preimushestvo) - on ne propuskaet dublicatov
         Set<String> set = new LinkedHashSet<>();
         set.add("testStr");
         set.add("111");

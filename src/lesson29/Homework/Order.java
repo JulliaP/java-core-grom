@@ -1,6 +1,8 @@
 package lesson29.Homework;
 
-public class Order {
+import lesson29.File;
+
+public class Order implements Comparable<Order> {
 
     private long id;
     private int price;
@@ -34,6 +36,12 @@ public class Order {
 
     public String getShopIdentificator() {
         return shopIdentificator;
+    }
+
+    @Override
+    public int compareTo(Order o) {
+        // TODO Auto-generated method stub
+        return 0;
     }
 
     @Override
